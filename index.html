@@ -122,6 +122,7 @@ tr.selected td{background:#f0f0f0}
       <button class="btn btn-sm" onclick="exportExcel()">Exportar Excel</button>
       <button class="btn btn-sm" onclick="exportCalendar()">Exportar calendari</button>
       <button class="btn btn-sm" onclick="openVisModal()">Columnes visibles</button>
+      <button class="btn btn-sm" onclick="openEstatModal()">Gestionar estats</button>
       <button class="btn btn-sm" onclick="openColModal()">Gestionar columnes</button>
       <button class="btn btn-sm" onclick="doLogout()">Sortir</button>
     </div>
@@ -130,7 +131,7 @@ tr.selected td{background:#f0f0f0}
     <div class="stats" id="stats"></div>
     <div class="toolbar">
       <input type="text" id="search" placeholder="Cerca nom, empresa, email...">
-      <select id="f-estat"><option value="">Tots els estats</option><option>Actiu</option><option>Potencial</option><option>Inactiu</option><option>Perdut</option></select>
+      <select id="f-estat" id="f-estat-sel"><option value="">Tots els estats</option></select>
       <select id="f-resp"><option value="">Tots els responsables</option></select>
       <button class="btn btn-primary" onclick="newClient()">+ Nou projecte</button>
     </div>
@@ -165,6 +166,18 @@ tr.selected td{background:#f0f0f0}
     </div>
   </div>
 </div>
+<div class="modal-bg" id="estat-modal">
+  <div class="modal">
+    <h2>Gestionar estats</h2>
+    <p style="font-size:13px;color:#888;margin-bottom:12px">Defineix els estats possibles dels projectes i els seus colors</p>
+    <div id="estat-list"></div>
+    <div style="margin-top:12px"><button class="btn" onclick="addEstat()">+ Afegir estat</button></div>
+    <div style="display:flex;justify-content:flex-end;gap:8px;margin-top:16px">
+      <button class="btn" onclick="closeEstatModal()">Cancel·lar</button>
+      <button class="btn btn-primary" onclick="saveEstats()">Desar</button>
+    </div>
+  </div>
+</div>  
 <div class="modal-bg" id="vis-modal">
   <div class="modal">
     <h2>Columnes visibles</h2>
@@ -189,11 +202,84 @@ let openTab = 'dades';
 let loginAttempts = 0;
 const MAX_ATTEMPTS = 5;
 
-const ESTATS = ['Actiu','Potencial','Inactiu','Perdut'];
+let ESTATS = [];
 const RESPONSABLES = ['Anna G.','Marc P.','Laia T.','Jordi S.'];
 const TIPUS_HIST = ['Reunió','Trucada','Email','Nota'];
 const PRIORITATS = ['Alta','Mitja','Baixa'];
 
+
+// ============================================================
+// ESTATS
+// ============================================================
+const ESTATS_DEFAULT = [
+  {key:'Actiu', label:'Actiu', color:'#EAF3DE', textColor:'#3B6D11'},
+  {key:'Potencial', label:'Potencial', color:'#E6F1FB', textColor:'#185FA5'},
+  {key:'Inactiu', label:'Inactiu', color:'#F1EFE8', textColor:'#5F5E5A'},
+  {key:'Perdut', label:'Perdut', color:'#FCEBEB', textColor:'#A32D2D'}
+];
+
+async function loadEstats() {
+  const res = await api('getEstats');
+  if (res.ok && res.data.length) {
+    ESTATS = res.data;
+  } else {
+    ESTATS = [...ESTATS_DEFAULT];
+  }
+}
+
+function getEstat(key) {
+  return ESTATS.find(e => e.key === key) || {key, label:key, color:'#F1EFE8', textColor:'#5F5E5A'};
+}
+
+function openEstatModal() {
+  renderEstatList();
+  document.getElementById('estat-modal').classList.add('open');
+}
+
+function closeEstatModal() {
+  document.getElementById('estat-modal').classList.remove('open');
+}
+
+function renderEstatList() {
+  document.getElementById('estat-list').innerHTML = ESTATS.map((e,i) => `
+    <div class="col-item" style="align-items:center">
+      <input value="${esc(e.label)}" placeholder="Nom de l'estat" style="flex:1"
+        onchange="ESTATS[${i}].label=this.value;ESTATS[${i}].key=this.value">
+      <div style="display:flex;align-items:center;gap:6px">
+        <label style="font-size:11px;color:#888">Fons</label>
+        <input type="color" value="${e.color}" style="width:32px;height:28px;padding:2px;border:0.5px solid #ccc;border-radius:6px;cursor:pointer"
+          onchange="ESTATS[${i}].color=this.value">
+      </div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <label style="font-size:11px;color:#888">Text</label>
+        <input type="color" value="${e.textColor}" style="width:32px;height:28px;padding:2px;border:0.5px solid #ccc;border-radius:6px;cursor:pointer"
+          onchange="ESTATS[${i}].textColor=this.value">
+      </div>
+      <div class="badge" style="background:${e.color};color:${e.textColor}">${esc(e.label)}</div>
+      <button class="btn btn-sm" style="color:#c0392b" onclick="removeEstat(${i})">✕</button>
+    </div>`).join('');
+}
+
+function addEstat() {
+  ESTATS.push({key:'Nou estat', label:'Nou estat', color:'#F1EFE8', textColor:'#5F5E5A'});
+  renderEstatList();
+}
+
+function removeEstat(i) {
+  if (ESTATS.length <= 1) { alert('Ha d\'haver-hi com a mínim un estat.'); return; }
+  ESTATS.splice(i,1);
+  renderEstatList();
+}
+
+async function saveEstats() {
+  const res = await api('saveEstats', {estats: ESTATS});
+  if (res.ok) {
+    closeEstatModal();
+    render();
+  }
+}
+
+    
 // ============================================================
 // API
 // ============================================================
@@ -274,8 +360,9 @@ async function startApp() {
   document.getElementById('user-chip').textContent = SESSION.nom;
   const savedHidden = localStorage.getItem('crm_hidden_cols');
   if (savedHidden) hiddenCols = JSON.parse(savedHidden);
-  await loadCustomFields();
-  await loadClients();
+  await loadEstats();
+await loadCustomFields();
+await loadClients();
 }
 
 async function loadCustomFields() {
@@ -412,6 +499,7 @@ function render() {
   renderHead();
   renderBody();
   if (openClientId) renderPanel();
+  
 }
 
 function renderStats() {
@@ -425,6 +513,12 @@ function renderStats() {
     <div class="stat"><div class="stat-val" style="color:#3B6D11">${a}</div><div class="stat-lbl">Actius</div></div>
     <div class="stat"><div class="stat-val" style="color:#185FA5">${p}</div><div class="stat-lbl">Potencials</div></div>
     <div class="stat"><div class="stat-val" style="color:#c0392b">${pend}</div><div class="stat-lbl">Contactes pendents</div></div>`;
+const fSel = document.getElementById('f-estat');
+if (fSel) {
+  const cur = fSel.value;
+  fSel.innerHTML = '<option value="">Tots els estats</option>' +
+    ESTATS.map(e => `<option value="${esc(e.key)}"${e.key===cur?' selected':''}>${esc(e.label)}</option>`).join('');
+}
 }
 
 function renderRespFilter() {
@@ -480,7 +574,7 @@ function renderBody() {
     const tds=cols.map(col=>{
       let val='';
       if(col.key==='nom') val=`<span style="font-weight:500">${esc(c.nom)}</span>`;
-      else if(col.key==='estat') val=`<span class="badge b-${c.estat}">${c.estat||''}</span>`;
+      else if(col.key==='estat'){const est=getEstat(c.estat);val=`<span class="badge" style="background:${est.color};color:${est.textColor}">${esc(est.label)}</span>`;}
       else if(col.key==='responsable') val=c.responsable?`<span style="display:inline-flex;align-items:center;gap:5px"><span class="avatar">${initials(c.responsable)}</span>${esc(c.responsable)}</span>`:'';
       else if(col.key==='proper_contacte') val=`<span class="${properClass(c.proper_contacte)}">${fmtDate(c.proper_contacte)}</span>`;
       else if(col.key==='darrer_contacte') val=`<span style="color:#888">${fmtDate(c.darrer_contacte)}</span>`;
@@ -536,7 +630,7 @@ function renderPanelDades(c) {
       <div class="field-row"><label>Telèfon</label><input id="p-tel" value="${esc(c.tel)}"></div>
     </div>
     <div class="field-grid">
-      <div class="field-row"><label>Estat</label><select id="p-estat">${ESTATS.map(s=>`<option${s===c.estat?' selected':''}>${s}</option>`).join('')}</select></div>
+      <div class="field-row"><label>Estat</label><select id="p-estat">${ESTATS.map(s=>`<option value="${esc(s.key)}"${s.key===c.estat?' selected':''}>${esc(s.label)}</option>`).join('')}</select></div>
       <div class="field-row"><label>Responsable</label><input id="p-resp" value="${esc(c.responsable)}" list="resp-list"><datalist id="resp-list">${RESPONSABLES.map(r=>`<option value="${r}">`).join('')}</datalist></div>
     </div>
     <div class="field-grid">
@@ -778,6 +872,7 @@ document.getElementById('f-resp').addEventListener('change',render);
 document.getElementById('login-pass').addEventListener('keydown',e=>{if(e.key==='Enter')doLogin();});
 document.getElementById('col-modal').addEventListener('click',e=>{if(e.target===document.getElementById('col-modal'))closeColModal();});
 document.getElementById('vis-modal').addEventListener('click',e=>{if(e.target===document.getElementById('vis-modal'))closeVisModal();});
+    document.getElementById('estat-modal').addEventListener('click',e=>{if(e.target===document.getElementById('estat-modal'))closeEstatModal();});
 
 if(checkSession()){startApp();}
 </script>
