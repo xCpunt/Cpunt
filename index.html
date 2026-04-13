@@ -9,8 +9,6 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f5f5f3;color:#1a1a1a;font-size:14px}
 input,select,textarea,button{font-family:inherit;font-size:14px}
-
-/* Login */
 #login-screen{display:flex;align-items:center;justify-content:center;min-height:100vh;background:#f5f5f3}
 .login-card{background:#fff;border:0.5px solid #e0e0e0;border-radius:12px;padding:2rem;width:100%;max-width:360px}
 .login-card h1{font-size:20px;font-weight:500;margin-bottom:8px}
@@ -22,23 +20,17 @@ input,select,textarea,button{font-family:inherit;font-size:14px}
 .btn-login{width:100%;padding:10px;background:#1a1a1a;color:#fff;border:none;border-radius:8px;font-size:14px;cursor:pointer;margin-top:8px}
 .btn-login:hover{opacity:0.85}
 .login-error{color:#c0392b;font-size:13px;margin-top:8px;display:none}
-
-/* App */
 #app{display:none;min-height:100vh}
 .topbar{background:#fff;border-bottom:0.5px solid #e0e0e0;padding:0 1.5rem;height:52px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
 .topbar-left{display:flex;align-items:center;gap:12px}
 .topbar h1{font-size:16px;font-weight:500}
-.topbar-right{display:flex;align-items:center;gap:8px}
+.topbar-right{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .user-chip{font-size:13px;color:#666}
 .main{padding:1.5rem}
-
-/* Stats */
 .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-bottom:16px}
 .stat{background:#fff;border:0.5px solid #e0e0e0;border-radius:8px;padding:10px 14px}
 .stat-val{font-size:22px;font-weight:500}
 .stat-lbl{font-size:11px;color:#888;margin-top:2px}
-
-/* Toolbar */
 .toolbar{display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap;align-items:center}
 .toolbar input,.toolbar select{font-size:13px;padding:6px 10px;border:0.5px solid #ccc;border-radius:8px;background:#fff;color:#1a1a1a;height:34px}
 .toolbar input{flex:1;min-width:160px}
@@ -47,29 +39,20 @@ input,select,textarea,button{font-family:inherit;font-size:14px}
 .btn-primary{background:#1a1a1a;color:#fff;border-color:#1a1a1a}
 .btn-primary:hover{opacity:0.85}
 .btn-sm{height:28px;padding:4px 10px;font-size:12px}
-
-/* Taula */
 .tbl-wrap{background:#fff;border:0.5px solid #e0e0e0;border-radius:12px;overflow:hidden}
 .tbl-scroll{overflow-x:auto}
 table{width:100%;border-collapse:collapse;font-size:13px}
-th{text-align:left;padding:8px 12px;font-weight:500;font-size:11px;color:#888;border-bottom:0.5px solid #e0e0e0;background:#fafafa;white-space:nowrap;cursor:pointer;user-select:none}
-th:hover{background:#f0f0f0}
+th{text-align:left;padding:8px 12px;font-weight:500;font-size:11px;color:#888;border-bottom:0.5px solid #e0e0e0;background:#fafafa;white-space:nowrap;user-select:none}
 td{padding:8px 12px;border-bottom:0.5px solid #f0f0f0;vertical-align:middle;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 tr:last-child td{border-bottom:none}
 tr:hover td{background:#fafafa;cursor:pointer}
 tr.selected td{background:#f0f0f0}
-
-/* Badges */
 .badge{display:inline-block;font-size:11px;padding:2px 8px;border-radius:20px;font-weight:500}
 .b-Actiu{background:#EAF3DE;color:#3B6D11}
 .b-Potencial{background:#E6F1FB;color:#185FA5}
 .b-Inactiu{background:#F1EFE8;color:#5F5E5A}
 .b-Perdut{background:#FCEBEB;color:#A32D2D}
-
-/* Avatar */
 .avatar{width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:500;background:#E6F1FB;color:#185FA5;flex-shrink:0;vertical-align:middle}
-
-/* Panel */
 #panel{display:none;position:fixed;top:52px;right:0;bottom:0;width:460px;background:#fff;border-left:0.5px solid #e0e0e0;overflow-y:auto;z-index:50}
 #panel.open{display:block}
 .panel-header{padding:16px;border-bottom:0.5px solid #e0e0e0;display:flex;align-items:center;gap:10px;position:sticky;top:0;background:#fff;z-index:10}
@@ -78,16 +61,12 @@ tr.selected td{background:#f0f0f0}
 .tab.active{color:#1a1a1a;border-bottom-color:#1a1a1a;font-weight:500}
 .panel-body{padding:16px}
 .panel-footer{padding:12px 16px;border-top:0.5px solid #e0e0e0;display:flex;justify-content:flex-end;gap:8px;position:sticky;bottom:0;background:#fff}
-
-/* Camps del panel */
 .field-row{margin-bottom:12px}
 .field-row label{display:block;font-size:11px;font-weight:500;color:#888;margin-bottom:4px}
 .field-row input,.field-row select,.field-row textarea{width:100%;padding:7px 10px;border:0.5px solid #ccc;border-radius:8px;background:#fff;color:#1a1a1a}
 .field-row textarea{resize:vertical;min-height:70px}
 .field-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .field-row input:focus,.field-row select:focus,.field-row textarea:focus{outline:none;border-color:#1a1a1a}
-
-/* Històric */
 .hist-item{padding:10px 0;border-bottom:0.5px solid #f0f0f0}
 .hist-item:last-child{border-bottom:none}
 .hist-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
@@ -98,8 +77,6 @@ tr.selected td{background:#f0f0f0}
 .ht-Trucada{background:#EAF3DE;color:#3B6D11}
 .ht-Email{background:#EEEDFE;color:#534AB7}
 .ht-Nota{background:#F1EFE8;color:#5F5E5A}
-
-/* Tasques */
 .tasca-item{display:flex;align-items:flex-start;gap:8px;padding:8px 0;border-bottom:0.5px solid #f0f0f0}
 .tasca-item:last-child{border-bottom:none}
 .tasca-item input[type=checkbox]{margin-top:2px;flex-shrink:0;width:15px;height:15px;cursor:pointer}
@@ -109,61 +86,43 @@ tr.selected td{background:#f0f0f0}
 .prio-alta{color:#c0392b;font-weight:500}
 .prio-mitja{color:#e67e22;font-weight:500}
 .prio-baixa{color:#888}
-
-/* Columnes editor */
 .col-item{display:flex;align-items:center;gap:8px;padding:8px;border:0.5px solid #e0e0e0;border-radius:8px;margin-bottom:6px;background:#fff}
 .col-item input{flex:1;padding:5px 8px;border:0.5px solid #ccc;border-radius:6px}
 .col-item select{padding:5px 8px;border:0.5px solid #ccc;border-radius:6px}
-
-/* Modal */
 .modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:200;align-items:center;justify-content:center}
 .modal-bg.open{display:flex}
-.modal{background:#fff;border-radius:12px;padding:1.5rem;width:100%;max-width:500px;max-height:80vh;overflow-y:auto}
+.modal{background:#fff;border-radius:12px;padding:1.5rem;width:100%;max-width:520px;max-height:85vh;overflow-y:auto}
 .modal h2{font-size:16px;font-weight:500;margin-bottom:1rem}
-
-/* Loading */
 .loading{text-align:center;padding:3rem;color:#888;font-size:13px}
 .empty{text-align:center;padding:2rem;color:#888;font-size:13px}
 .tag-proper-avui{color:#c0392b;font-weight:500}
 .tag-proper-aviat{color:#e67e22}
-
-@media(max-width:768px){
-  #panel{width:100%;top:52px}
-  .stats{grid-template-columns:repeat(2,1fr)}
-  .main{padding:1rem}
-}
+.vis-toggle{display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:0.5px solid #f0f0f0;font-size:13px}
+.vis-toggle:last-child{border-bottom:none}
+.vis-toggle input[type=checkbox]{width:15px;height:15px;cursor:pointer}
+@media(max-width:768px){#panel{width:100%;top:52px}.stats{grid-template-columns:repeat(2,1fr)}.main{padding:1rem}}
 </style>
 </head>
 <body>
-
-<!-- LOGIN -->
 <div id="login-screen">
   <div class="login-card">
-    <h1>CRM Equip</h1>
+    <h1>Gestió de Projectes</h1>
     <p>Inicia sessió per continuar</p>
-    <div class="login-field">
-      <label>Usuari</label>
-      <input type="text" id="login-user" placeholder="usuari" autocomplete="username">
-    </div>
-    <div class="login-field">
-      <label>Contrasenya</label>
-      <input type="password" id="login-pass" placeholder="••••••••" autocomplete="current-password">
-    </div>
+    <div class="login-field"><label>Usuari</label><input type="text" id="login-user" placeholder="usuari" autocomplete="username"></div>
+    <div class="login-field"><label>Contrasenya</label><input type="password" id="login-pass" placeholder="••••••••" autocomplete="current-password"></div>
     <button class="btn-login" onclick="doLogin()">Entrar</button>
     <div class="login-error" id="login-error"></div>
   </div>
 </div>
-
-<!-- APP -->
 <div id="app">
   <div class="topbar">
-    <div class="topbar-left">
-      <h1>CRM Equip</h1>
-    </div>
+    <div class="topbar-left"><h1>Gestió de Projectes</h1></div>
     <div class="topbar-right">
       <span class="user-chip" id="user-chip"></span>
+      <button class="btn btn-sm" onclick="exportExcel()">Exportar Excel</button>
       <button class="btn btn-sm" onclick="exportCalendar()">Exportar calendari</button>
-      <button class="btn btn-sm" onclick="openColModal()">Columnes</button>
+      <button class="btn btn-sm" onclick="openVisModal()">Columnes visibles</button>
+      <button class="btn btn-sm" onclick="openColModal()">Gestionar columnes</button>
       <button class="btn btn-sm" onclick="doLogout()">Sortir</button>
     </div>
   </div>
@@ -173,20 +132,11 @@ tr.selected td{background:#f0f0f0}
       <input type="text" id="search" placeholder="Cerca nom, empresa, email...">
       <select id="f-estat"><option value="">Tots els estats</option><option>Actiu</option><option>Potencial</option><option>Inactiu</option><option>Perdut</option></select>
       <select id="f-resp"><option value="">Tots els responsables</option></select>
-      <button class="btn btn-primary" onclick="newClient()">+ Nou client</button>
+      <button class="btn btn-primary" onclick="newClient()">+ Nou projecte</button>
     </div>
-    <div class="tbl-wrap">
-      <div class="tbl-scroll">
-        <table>
-          <thead id="thead"></thead>
-          <tbody id="tbody"></tbody>
-        </table>
-      </div>
-    </div>
+    <div class="tbl-wrap"><div class="tbl-scroll"><table><thead id="thead"></thead><tbody id="tbody"></tbody></table></div></div>
   </div>
 </div>
-
-<!-- PANEL LATERAL -->
 <div id="panel">
   <div class="panel-header">
     <div class="avatar" id="panel-avatar" style="width:36px;height:36px;font-size:14px"></div>
@@ -204,18 +154,24 @@ tr.selected td{background:#f0f0f0}
   <div class="panel-body" id="panel-body"></div>
   <div class="panel-footer" id="panel-footer"></div>
 </div>
-
-<!-- MODAL COLUMNES -->
 <div class="modal-bg" id="col-modal">
   <div class="modal">
     <h2>Gestionar columnes</h2>
     <div id="col-list"></div>
-    <div style="margin-top:12px">
-      <button class="btn" onclick="addCustomCol()">+ Afegir columna</button>
-    </div>
+    <div style="margin-top:12px"><button class="btn" onclick="addCustomCol()">+ Afegir columna</button></div>
     <div style="display:flex;justify-content:flex-end;gap:8px;margin-top:16px">
       <button class="btn" onclick="closeColModal()">Cancel·lar</button>
       <button class="btn btn-primary" onclick="saveColumns()">Desar</button>
+    </div>
+  </div>
+</div>
+<div class="modal-bg" id="vis-modal">
+  <div class="modal">
+    <h2>Columnes visibles</h2>
+    <p style="font-size:13px;color:#888;margin-bottom:12px">Selecciona quines columnes vols veure a la taula</p>
+    <div id="vis-list"></div>
+    <div style="display:flex;justify-content:flex-end;gap:8px;margin-top:16px">
+      <button class="btn" onclick="closeVisModal()">Tancar</button>
     </div>
   </div>
 </div>
@@ -227,6 +183,7 @@ tr.selected td{background:#f0f0f0}
 let SESSION = null;
 let clients = [];
 let customFields = [];
+let hiddenCols = [];
 let openClientId = null;
 let openTab = 'dades';
 let loginAttempts = 0;
@@ -267,11 +224,9 @@ async function doLogin() {
   const username = document.getElementById('login-user').value.trim();
   const password = document.getElementById('login-pass').value;
   if (!username || !password) { showLoginError('Omple tots els camps.'); return; }
-
   const btn = document.querySelector('.btn-login');
   btn.textContent = 'Entrant...';
   btn.disabled = true;
-
   try {
     const res = await api('login', {username, password});
     if (res.ok) {
@@ -306,10 +261,7 @@ async function doLogout() {
 
 function checkSession() {
   const stored = sessionStorage.getItem('crm_session');
-  if (stored) {
-    SESSION = JSON.parse(stored);
-    return true;
-  }
+  if (stored) { SESSION = JSON.parse(stored); return true; }
   return false;
 }
 
@@ -320,6 +272,8 @@ async function startApp() {
   document.getElementById('login-screen').style.display = 'none';
   document.getElementById('app').style.display = 'block';
   document.getElementById('user-chip').textContent = SESSION.nom;
+  const savedHidden = localStorage.getItem('crm_hidden_cols');
+  if (savedHidden) hiddenCols = JSON.parse(savedHidden);
   await loadCustomFields();
   await loadClients();
 }
@@ -341,7 +295,7 @@ async function loadClients() {
 }
 
 // ============================================================
-// RENDER TAULA
+// COLUMNES
 // ============================================================
 const BASE_COLS = [
   {key:'nom', label:'Nom', type:'text', fixed:true},
@@ -355,18 +309,100 @@ const BASE_COLS = [
 ];
 
 function allCols() {
-  return [...BASE_COLS, ...customFields.map(f => ({...f, fixed:false}))];
+  return [...BASE_COLS, ...customFields.map(f=>({...f, fixed:false}))];
 }
 
+function visibleCols() {
+  return allCols().filter(c => !hiddenCols.includes(c.key));
+}
+
+// ============================================================
+// MODAL COLUMNES VISIBLES
+// ============================================================
+function openVisModal() {
+  const cols = allCols();
+  document.getElementById('vis-list').innerHTML = cols.map(c => `
+    <div class="vis-toggle">
+      <input type="checkbox" id="vis-${c.key}" ${!hiddenCols.includes(c.key)?'checked':''}
+        onchange="toggleColVis('${c.key}',this.checked)"
+        ${c.key==='nom'?'disabled':''}>
+      <label for="vis-${c.key}" style="cursor:pointer;flex:1">${c.label}</label>
+      ${c.key==='nom'?'<span style="font-size:11px;color:#aaa">sempre visible</span>':''}
+    </div>`).join('');
+  document.getElementById('vis-modal').classList.add('open');
+}
+
+function closeVisModal() {
+  document.getElementById('vis-modal').classList.remove('open');
+}
+
+function toggleColVis(key, visible) {
+  if (visible) {
+    hiddenCols = hiddenCols.filter(k=>k!==key);
+  } else {
+    if (!hiddenCols.includes(key)) hiddenCols.push(key);
+  }
+  localStorage.setItem('crm_hidden_cols', JSON.stringify(hiddenCols));
+  render();
+}
+
+// ============================================================
+// MODAL GESTIONAR COLUMNES
+// ============================================================
+function openColModal() {
+  renderColList();
+  document.getElementById('col-modal').classList.add('open');
+}
+
+function closeColModal() {
+  document.getElementById('col-modal').classList.remove('open');
+}
+
+function renderColList() {
+  const fixed = BASE_COLS.map(c=>`
+    <div class="col-item" style="background:#fafafa">
+      <span style="flex:1;color:#888;font-size:13px">${c.label}</span>
+      <span style="font-size:11px;color:#aaa">columna fixa</span>
+    </div>`).join('');
+  const custom = customFields.length ? customFields.map((f,i)=>`
+    <div class="col-item" id="cf-${i}">
+      <input value="${esc(f.label)}" placeholder="Nom columna" onchange="customFields[${i}].label=this.value">
+      <select onchange="customFields[${i}].type=this.value">
+        ${['text','number','date','select'].map(t=>`<option${t===f.type?' selected':''}>${t}</option>`).join('')}
+      </select>
+      <input value="${esc(f.options||'')}" placeholder="Opcions separades per comes" style="width:130px" onchange="customFields[${i}].options=this.value">
+      <button class="btn btn-sm" style="color:#c0392b" onclick="removeCustomCol(${i})">✕</button>
+    </div>`).join('') : '<div style="color:#888;font-size:13px;padding:8px 0">Sense columnes personalitzades encara</div>';
+  document.getElementById('col-list').innerHTML = fixed + custom;
+}
+
+function addCustomCol() {
+  customFields.push({key:'cf_'+Date.now(), label:'Nova columna', type:'text', options:''});
+  renderColList();
+}
+
+function removeCustomCol(i) {
+  customFields.splice(i,1);
+  renderColList();
+}
+
+async function saveColumns() {
+  const res = await api('saveCustomFields', {fields: customFields});
+  if (res.ok) { closeColModal(); render(); }
+}
+
+// ============================================================
+// RENDER
+// ============================================================
 function filtered() {
   const q = document.getElementById('search').value.toLowerCase();
   const e = document.getElementById('f-estat').value;
   const r = document.getElementById('f-resp').value;
   return clients.filter(c => {
-    const mq = !q || [c.nom,c.empresa,c.email,c.tel,c.responsable,c.notes].some(v => (v||'').toLowerCase().includes(q));
-    const me = !e || c.estat === e;
-    const mr = !r || c.responsable === r;
-    return mq && me && mr;
+    const mq = !q || [c.nom,c.empresa,c.email,c.tel,c.responsable,c.notes].some(v=>(v||'').toLowerCase().includes(q));
+    const me = !e || c.estat===e;
+    const mr = !r || c.responsable===r;
+    return mq&&me&&mr;
   });
 }
 
@@ -379,31 +415,28 @@ function render() {
 }
 
 function renderStats() {
-  const t = clients.length;
-  const a = clients.filter(c=>c.estat==='Actiu').length;
-  const p = clients.filter(c=>c.estat==='Potencial').length;
-  const i = clients.filter(c=>c.estat==='Inactiu'||c.estat==='Perdut').length;
-  const avui = new Date().toISOString().split('T')[0];
-  const pend = clients.filter(c=>c.proper_contacte && c.proper_contacte <= avui).length;
-  document.getElementById('stats').innerHTML = `
-    <div class="stat"><div class="stat-val">${t}</div><div class="stat-lbl">Total clients</div></div>
+  const t=clients.length;
+  const a=clients.filter(c=>c.estat==='Actiu').length;
+  const p=clients.filter(c=>c.estat==='Potencial').length;
+  const avui=new Date().toISOString().split('T')[0];
+  const pend=clients.filter(c=>c.proper_contacte&&String(c.proper_contacte).split('T')[0]<=avui).length;
+  document.getElementById('stats').innerHTML=`
+    <div class="stat"><div class="stat-val">${t}</div><div class="stat-lbl">Total projectes</div></div>
     <div class="stat"><div class="stat-val" style="color:#3B6D11">${a}</div><div class="stat-lbl">Actius</div></div>
     <div class="stat"><div class="stat-val" style="color:#185FA5">${p}</div><div class="stat-lbl">Potencials</div></div>
     <div class="stat"><div class="stat-val" style="color:#c0392b">${pend}</div><div class="stat-lbl">Contactes pendents</div></div>`;
 }
 
 function renderRespFilter() {
-  const sel = document.getElementById('f-resp');
-  const cur = sel.value;
-  const resps = [...new Set(clients.map(c=>c.responsable).filter(Boolean))];
-  sel.innerHTML = '<option value="">Tots els responsables</option>' + resps.map(r=>`<option${r===cur?' selected':''}>${r}</option>`).join('');
+  const sel=document.getElementById('f-resp');
+  const cur=sel.value;
+  const resps=[...new Set(clients.map(c=>c.responsable).filter(Boolean))];
+  sel.innerHTML='<option value="">Tots els responsables</option>'+resps.map(r=>`<option${r===cur?' selected':''}>${r}</option>`).join('');
 }
 
 function renderHead() {
-  const cols = allCols();
-  document.getElementById('thead').innerHTML = '<tr>' +
-    cols.map(c=>`<th>${c.label}</th>`).join('') +
-    '<th style="width:40px"></th></tr>';
+  const cols=visibleCols();
+  document.getElementById('thead').innerHTML='<tr>'+cols.map(c=>`<th>${c.label}</th>`).join('')+'<th style="width:40px"></th></tr>';
 }
 
 function initials(name) {
@@ -411,93 +444,89 @@ function initials(name) {
 }
 
 function fmtDate(d) {
-  if (!d) return '';
-  const p = String(d).split('T')[0].split('-');
-  return p.length===3 ? `${p[2]}/${p[1]}/${p[0]}` : d;
+  if(!d)return'';
+  const p=String(d).split('T')[0].split('-');
+  return p.length===3?`${p[2]}/${p[1]}/${p[0]}`:d;
 }
 
 function properClass(d) {
-  if (!d) return '';
-  const avui = new Date().toISOString().split('T')[0];
-  const propera = String(d).split('T')[0];
-  if (propera <= avui) return 'tag-proper-avui';
-  const diff = (new Date(propera) - new Date(avui)) / 86400000;
-  if (diff <= 3) return 'tag-proper-aviat';
-  return '';
+  if(!d)return'';
+  const avui=new Date().toISOString().split('T')[0];
+  const propera=String(d).split('T')[0];
+  if(propera<=avui)return'tag-proper-avui';
+  const diff=(new Date(propera)-new Date(avui))/86400000;
+  if(diff<=3)return'tag-proper-aviat';
+  return'';
 }
 
 function esc(s) {
   return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
+function getCustomVal(client,key) {
+  try{const cf=JSON.parse(client.custom_fields||'{}');return cf[key]||'';}catch{return'';}
+}
+
+function setCustomVal(client,key,val) {
+  try{const cf=JSON.parse(client.custom_fields||'{}');cf[key]=val;client.custom_fields=JSON.stringify(cf);}catch{client.custom_fields=JSON.stringify({[key]:val});}
+}
+
 function renderBody() {
-  const rows = filtered();
-  const cols = allCols();
-  const tb = document.getElementById('tbody');
-  if (!rows.length) { tb.innerHTML = `<tr><td colspan="${cols.length+1}" class="empty">Cap client trobat</td></tr>`; return; }
-  tb.innerHTML = rows.map(c => {
-    const tds = cols.map(col => {
-      let val = '';
-      if (col.key === 'nom') val = `<span style="font-weight:500">${esc(c.nom)}</span>`;
-      else if (col.key === 'estat') val = `<span class="badge b-${c.estat}">${c.estat||''}</span>`;
-      else if (col.key === 'responsable') val = c.responsable ? `<span style="display:inline-flex;align-items:center;gap:5px"><span class="avatar">${initials(c.responsable)}</span>${esc(c.responsable)}</span>` : '';
-      else if (col.key === 'proper_contacte') val = `<span class="${properClass(c.proper_contacte)}">${fmtDate(c.proper_contacte)}</span>`;
-      else if (col.key === 'darrer_contacte') val = `<span style="color:#888">${fmtDate(c.darrer_contacte)}</span>`;
-      else {
-        const raw = col.key.startsWith('cf_') ? getCustomVal(c, col.key) : c[col.key];
-        val = `<span style="color:#666">${esc(raw)}</span>`;
-      }
-      return `<td title="${esc(String(c[col.key]||''))}">${val}</td>`;
+  const rows=filtered();
+  const cols=visibleCols();
+  const tb=document.getElementById('tbody');
+  if(!rows.length){tb.innerHTML=`<tr><td colspan="${cols.length+1}" class="empty">Cap projecte trobat</td></tr>`;return;}
+  tb.innerHTML=rows.map(c=>{
+    const tds=cols.map(col=>{
+      let val='';
+      if(col.key==='nom') val=`<span style="font-weight:500">${esc(c.nom)}</span>`;
+      else if(col.key==='estat') val=`<span class="badge b-${c.estat}">${c.estat||''}</span>`;
+      else if(col.key==='responsable') val=c.responsable?`<span style="display:inline-flex;align-items:center;gap:5px"><span class="avatar">${initials(c.responsable)}</span>${esc(c.responsable)}</span>`:'';
+      else if(col.key==='proper_contacte') val=`<span class="${properClass(c.proper_contacte)}">${fmtDate(c.proper_contacte)}</span>`;
+      else if(col.key==='darrer_contacte') val=`<span style="color:#888">${fmtDate(c.darrer_contacte)}</span>`;
+      else{const raw=col.key.startsWith('cf_')?getCustomVal(c,col.key):c[col.key];val=`<span style="color:#666">${esc(raw)}</span>`;}
+      return`<td title="${esc(String(c[col.key]||''))}">${val}</td>`;
     });
-    return `<tr class="${openClientId===c.id?'selected':''}" onclick="openPanel('${c.id}')">${tds.join('')}<td><button class="btn btn-sm" style="color:#c0392b;border-color:transparent" onclick="event.stopPropagation();deleteClient('${c.id}')">✕</button></td></tr>`;
+    return`<tr class="${openClientId===c.id?'selected':''}" onclick="openPanel('${c.id}')">${tds.join('')}<td><button class="btn btn-sm" style="color:#c0392b;border-color:transparent" onclick="event.stopPropagation();deleteClient('${c.id}')">✕</button></td></tr>`;
   }).join('');
 }
 
-function getCustomVal(client, key) {
-  try { const cf = JSON.parse(client.custom_fields||'{}'); return cf[key]||''; } catch { return ''; }
-}
-
-function setCustomVal(client, key, val) {
-  try { const cf = JSON.parse(client.custom_fields||'{}'); cf[key]=val; client.custom_fields=JSON.stringify(cf); } catch { client.custom_fields=JSON.stringify({[key]:val}); }
-}
-
 // ============================================================
-// PANEL LATERAL
+// PANEL
 // ============================================================
 function openPanel(id) {
-  openClientId = id;
-  openTab = 'dades';
+  openClientId=id;
+  openTab='dades';
   render();
   document.getElementById('panel').classList.add('open');
 }
 
 function closePanel() {
-  openClientId = null;
+  openClientId=null;
   document.getElementById('panel').classList.remove('open');
   render();
 }
 
-function setTab(tab, el) {
-  openTab = tab;
+function setTab(tab,el) {
+  openTab=tab;
   document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
   el.classList.add('active');
   renderPanel();
 }
 
 function renderPanel() {
-  const c = clients.find(x=>x.id===openClientId);
-  if (!c) return;
-  document.getElementById('panel-avatar').textContent = initials(c.nom);
-  document.getElementById('panel-nom').textContent = c.nom;
-  document.getElementById('panel-empresa').textContent = c.empresa;
-  if (openTab==='dades') renderPanelDades(c);
-  else if (openTab==='historic') renderPanelHistoric(c);
-  else if (openTab==='tasques') renderPanelTasques(c);
+  const c=clients.find(x=>x.id===openClientId);
+  if(!c)return;
+  document.getElementById('panel-avatar').textContent=initials(c.nom);
+  document.getElementById('panel-nom').textContent=c.nom;
+  document.getElementById('panel-empresa').textContent=c.empresa;
+  if(openTab==='dades') renderPanelDades(c);
+  else if(openTab==='historic') renderPanelHistoric(c);
+  else if(openTab==='tasques') renderPanelTasques(c);
 }
 
 function renderPanelDades(c) {
-  const cf = customFields;
-  let html = `
+  let html=`
     <div class="field-grid">
       <div class="field-row"><label>Nom</label><input id="p-nom" value="${esc(c.nom)}"></div>
       <div class="field-row"><label>Empresa</label><input id="p-empresa" value="${esc(c.empresa)}"></div>
@@ -515,58 +544,56 @@ function renderPanelDades(c) {
       <div class="field-row"><label>Proper contacte</label><input id="p-proper" type="date" value="${c.proper_contacte||''}" onchange="onProperContacteChange(this)"></div>
     </div>
     <div class="field-row"><label>Notes</label><textarea id="p-notes">${esc(c.notes)}</textarea></div>`;
-
-  cf.forEach(f => {
-    const val = getCustomVal(c, f.key);
-    html += `<div class="field-row"><label>${esc(f.label)}</label>`;
-    if (f.type==='select') html += `<select id="p-${f.key}">${(f.options||'').split(',').map(o=>`<option${o.trim()===val?' selected':''}>${o.trim()}</option>`).join('')}</select>`;
-    else if (f.type==='date') html += `<input type="date" id="p-${f.key}" value="${esc(val)}">`;
-    else if (f.type==='number') html += `<input type="number" id="p-${f.key}" value="${esc(val)}">`;
-    else html += `<input type="text" id="p-${f.key}" value="${esc(val)}">`;
-    html += `</div>`;
+  customFields.forEach(f=>{
+    const val=getCustomVal(c,f.key);
+    html+=`<div class="field-row"><label>${esc(f.label)}</label>`;
+    if(f.type==='select') html+=`<select id="p-${f.key}">${(f.options||'').split(',').map(o=>`<option${o.trim()===val?' selected':''}>${o.trim()}</option>`).join('')}</select>`;
+    else if(f.type==='date') html+=`<input type="date" id="p-${f.key}" value="${esc(val)}">`;
+    else if(f.type==='number') html+=`<input type="number" id="p-${f.key}" value="${esc(val)}">`;
+    else html+=`<input type="text" id="p-${f.key}" value="${esc(val)}">`;
+    html+=`</div>`;
   });
-
-  document.getElementById('panel-body').innerHTML = html;
-  document.getElementById('panel-footer').innerHTML = `
+  document.getElementById('panel-body').innerHTML=html;
+  document.getElementById('panel-footer').innerHTML=`
     <button class="btn" onclick="closePanel()">Tancar</button>
     <button class="btn btn-primary" onclick="saveClientPanel()">Desar canvis</button>`;
 }
 
 function onProperContacteChange(input) {
-  const darrer = document.getElementById('p-darrer');
-  const c = clients.find(x=>x.id===openClientId);
-  if (c && c.proper_contacte && c.proper_contacte !== input.value) {
-    darrer.value = c.proper_contacte;
+  const darrer=document.getElementById('p-darrer');
+  const c=clients.find(x=>x.id===openClientId);
+  if(c&&c.proper_contacte&&c.proper_contacte!==input.value) {
+    darrer.value=c.proper_contacte;
   }
 }
 
 async function saveClientPanel() {
-  const c = clients.find(x=>x.id===openClientId);
-  if (!c) return;
-  c.nom = document.getElementById('p-nom').value;
-  c.empresa = document.getElementById('p-empresa').value;
-  c.email = document.getElementById('p-email').value;
-  c.tel = document.getElementById('p-tel').value;
-  c.estat = document.getElementById('p-estat').value;
-  c.responsable = document.getElementById('p-resp').value;
-  c.darrer_contacte = document.getElementById('p-darrer').value;
-  c.proper_contacte = document.getElementById('p-proper').value;
-  c.notes = document.getElementById('p-notes').value;
-  customFields.forEach(f => {
-    const el = document.getElementById('p-'+f.key);
-    if (el) setCustomVal(c, f.key, el.value);
+  const c=clients.find(x=>x.id===openClientId);
+  if(!c)return;
+  c.nom=document.getElementById('p-nom').value;
+  c.empresa=document.getElementById('p-empresa').value;
+  c.email=document.getElementById('p-email').value;
+  c.tel=document.getElementById('p-tel').value;
+  c.estat=document.getElementById('p-estat').value;
+  c.responsable=document.getElementById('p-resp').value;
+  c.darrer_contacte=document.getElementById('p-darrer').value;
+  c.proper_contacte=document.getElementById('p-proper').value;
+  c.notes=document.getElementById('p-notes').value;
+  customFields.forEach(f=>{
+    const el=document.getElementById('p-'+f.key);
+    if(el) setCustomVal(c,f.key,el.value);
   });
-  const btn = document.querySelector('#panel-footer .btn-primary');
-  btn.textContent = 'Desant...'; btn.disabled = true;
-  const res = await api('saveClient', {client: c});
-  if (res.ok) {
-    const idx = clients.findIndex(x=>x.id===c.id);
-    if (idx>=0) clients[idx] = res.data;
+  const btn=document.querySelector('#panel-footer .btn-primary');
+  btn.textContent='Desant...';btn.disabled=true;
+  const res=await api('saveClient',{client:c});
+  if(res.ok){
+    const idx=clients.findIndex(x=>x.id===c.id);
+    if(idx>=0) clients[idx]=res.data;
     render();
-    btn.textContent = 'Desat!';
+    btn.textContent='Desat!';
     setTimeout(()=>{btn.textContent='Desar canvis';btn.disabled=false;},1500);
   } else {
-    btn.textContent = 'Error'; btn.disabled = false;
+    btn.textContent='Error';btn.disabled=false;
   }
 }
 
@@ -574,23 +601,22 @@ async function saveClientPanel() {
 // HISTORIC
 // ============================================================
 async function renderPanelHistoric(c) {
-  document.getElementById('panel-body').innerHTML = '<div class="loading">Carregant...</div>';
-  document.getElementById('panel-footer').innerHTML = '';
-  const res = await api('getHistoric', {clientId: c.id});
-  const hist = res.ok ? res.data : [];
-  const histHTML = hist.length ? hist.slice().reverse().map(h=>`
+  document.getElementById('panel-body').innerHTML='<div class="loading">Carregant...</div>';
+  document.getElementById('panel-footer').innerHTML='';
+  const res=await api('getHistoric',{clientId:c.id});
+  const hist=res.ok?res.data:[];
+  const histHTML=hist.length?hist.slice().reverse().map(h=>`
     <div class="hist-item">
       <div class="hist-top">
         <div>
-          <span class="hist-badge ht-${h.tipus?h.tipus.split('ó')[0]:''}">${h.tipus||''}</span>
+          <span class="hist-badge ht-${(h.tipus||'').substring(0,6).replace('ó','o').replace('à','a')}">${h.tipus||''}</span>
           <span class="hist-date">${fmtDate(h.data)}</span>
         </div>
         <button class="btn btn-sm" style="color:#c0392b;border:none;background:none" onclick="deleteHistEntry('${h.id}')">✕</button>
       </div>
       <div class="hist-text" style="margin-top:5px">${esc(h.text)}</div>
-    </div>`).join('') : '<div class="empty">Sense entrades encara</div>';
-
-  document.getElementById('panel-body').innerHTML = histHTML + `
+    </div>`).join(''):'<div class="empty">Sense entrades encara</div>';
+  document.getElementById('panel-body').innerHTML=histHTML+`
     <div style="border-top:0.5px solid #e0e0e0;padding-top:12px;margin-top:8px">
       <div style="font-size:12px;font-weight:500;color:#888;margin-bottom:8px">Nova entrada</div>
       <div class="field-grid" style="margin-bottom:8px">
@@ -605,25 +631,17 @@ async function renderPanelHistoric(c) {
 }
 
 async function addHistEntry(clientId) {
-  const text = document.getElementById('h-text').value.trim();
-  if (!text) return;
-  const entry = {
-    client_id: clientId,
-    tipus: document.getElementById('h-tipus').value,
-    text,
-    data: document.getElementById('h-data').value
-  };
-  const res = await api('saveHistoric', {entry});
-  if (res.ok) {
-    const c = clients.find(x=>x.id===clientId);
-    renderPanelHistoric(c);
-  }
+  const text=document.getElementById('h-text').value.trim();
+  if(!text)return;
+  const entry={client_id:clientId,tipus:document.getElementById('h-tipus').value,text,data:document.getElementById('h-data').value};
+  const res=await api('saveHistoric',{entry});
+  if(res.ok){const c=clients.find(x=>x.id===clientId);renderPanelHistoric(c);}
 }
 
 async function deleteHistEntry(id) {
-  if (!confirm('Eliminar aquesta entrada?')) return;
-  await api('deleteHistoric', {id});
-  const c = clients.find(x=>x.id===openClientId);
+  if(!confirm('Eliminar aquesta entrada?'))return;
+  await api('deleteHistoric',{id});
+  const c=clients.find(x=>x.id===openClientId);
   renderPanelHistoric(c);
 }
 
@@ -631,32 +649,27 @@ async function deleteHistEntry(id) {
 // TASQUES
 // ============================================================
 async function renderPanelTasques(c) {
-  document.getElementById('panel-body').innerHTML = '<div class="loading">Carregant...</div>';
-  document.getElementById('panel-footer').innerHTML = '';
-  const res = await api('getTasques', {clientId: c.id});
-  const tasques = res.ok ? res.data : [];
-  const pend = tasques.filter(t=>t.feta!=='true'&&t.feta!==true);
-  const fetes = tasques.filter(t=>t.feta==='true'||t.feta===true);
-
-  function tascaHTML(t) {
-    const feta = t.feta==='true'||t.feta===true;
-    const prioClass = t.prioritat==='Alta'?'prio-alta':t.prioritat==='Mitja'?'prio-mitja':'prio-baixa';
-    return `<div class="tasca-item">
+  document.getElementById('panel-body').innerHTML='<div class="loading">Carregant...</div>';
+  document.getElementById('panel-footer').innerHTML='';
+  const res=await api('getTasques',{clientId:c.id});
+  const tasques=res.ok?res.data:[];
+  const pend=tasques.filter(t=>t.feta!=='true'&&t.feta!==true);
+  const fetes=tasques.filter(t=>t.feta==='true'||t.feta===true);
+  function tascaHTML(t){
+    const feta=t.feta==='true'||t.feta===true;
+    const prioClass=t.prioritat==='Alta'?'prio-alta':t.prioritat==='Mitja'?'prio-mitja':'prio-baixa';
+    return`<div class="tasca-item">
       <input type="checkbox" ${feta?'checked':''} onchange="toggleTasca('${t.id}',this.checked)">
       <div style="flex:1">
         <div class="tasca-text ${feta?'feta':''}">${esc(t.text)}</div>
-        <div class="tasca-meta">
-          <span class="${prioClass}">${t.prioritat||'Baixa'}</span>
-          ${t.data_limit?` · Límit: ${fmtDate(t.data_limit)}`:''}
-        </div>
+        <div class="tasca-meta"><span class="${prioClass}">${t.prioritat||'Baixa'}</span>${t.data_limit?` · Límit: ${fmtDate(t.data_limit)}`:''}</div>
       </div>
       <button class="btn btn-sm" style="color:#c0392b;border:none;background:none" onclick="deleteTasca('${t.id}')">✕</button>
     </div>`;
   }
-
-  const html = `
-    ${pend.length ? pend.map(tascaHTML).join('') : '<div class="empty" style="padding:1rem 0">Sense tasques pendents</div>'}
-    ${fetes.length ? `<div style="font-size:11px;color:#888;margin:12px 0 6px;font-weight:500">COMPLETADES</div>${fetes.map(tascaHTML).join('')}` : ''}
+  document.getElementById('panel-body').innerHTML=`
+    ${pend.length?pend.map(tascaHTML).join(''):'<div class="empty" style="padding:1rem 0">Sense tasques pendents</div>'}
+    ${fetes.length?`<div style="font-size:11px;color:#888;margin:12px 0 6px;font-weight:500">COMPLETADES</div>${fetes.map(tascaHTML).join('')}`:''}
     <div style="border-top:0.5px solid #e0e0e0;padding-top:12px;margin-top:8px">
       <div style="font-size:12px;font-weight:500;color:#888;margin-bottom:8px">Nova tasca</div>
       <div class="field-row"><label>Descripció</label><input type="text" id="t-text" placeholder="Descripció de la tasca..."></div>
@@ -668,167 +681,105 @@ async function renderPanelTasques(c) {
         <button class="btn btn-primary" onclick="addTasca('${c.id}')">Afegir tasca</button>
       </div>
     </div>`;
-  document.getElementById('panel-body').innerHTML = html;
 }
 
 async function addTasca(clientId) {
-  const text = document.getElementById('t-text').value.trim();
-  if (!text) return;
-  const tasca = {
-    client_id: clientId,
-    text,
-    feta: false,
-    prioritat: document.getElementById('t-prio').value,
-    data_limit: document.getElementById('t-limit').value
-  };
-  const res = await api('saveTasca', {tasca});
-  if (res.ok) {
-    const c = clients.find(x=>x.id===clientId);
-    renderPanelTasques(c);
-  }
+  const text=document.getElementById('t-text').value.trim();
+  if(!text)return;
+  const tasca={client_id:clientId,text,feta:false,prioritat:document.getElementById('t-prio').value,data_limit:document.getElementById('t-limit').value};
+  const res=await api('saveTasca',{tasca});
+  if(res.ok){const c=clients.find(x=>x.id===clientId);renderPanelTasques(c);}
 }
 
-async function toggleTasca(id, checked) {
-  const res = await api('getTasques', {clientId: openClientId});
-  if (!res.ok) return;
-  const t = res.data.find(x=>x.id===id);
-  if (!t) return;
-  t.feta = checked;
-  await api('saveTasca', {tasca: t});
-  const c = clients.find(x=>x.id===openClientId);
+async function toggleTasca(id,checked) {
+  const res=await api('getTasques',{clientId:openClientId});
+  if(!res.ok)return;
+  const t=res.data.find(x=>x.id===id);
+  if(!t)return;
+  t.feta=checked;
+  await api('saveTasca',{tasca:t});
+  const c=clients.find(x=>x.id===openClientId);
   renderPanelTasques(c);
 }
 
 async function deleteTasca(id) {
-  if (!confirm('Eliminar aquesta tasca?')) return;
-  await api('deleteTasca', {id});
-  const c = clients.find(x=>x.id===openClientId);
+  if(!confirm('Eliminar aquesta tasca?'))return;
+  await api('deleteTasca',{id});
+  const c=clients.find(x=>x.id===openClientId);
   renderPanelTasques(c);
 }
 
 // ============================================================
-// CLIENTS CRUD
+// CRUD CLIENTS
 // ============================================================
 async function newClient() {
-  const c = {
-    id: 'c'+Date.now(),
-    nom: 'Nou client', empresa:'', email:'', tel:'',
-    estat:'Potencial', responsable: RESPONSABLES[0],
-    darrer_contacte:'', proper_contacte:'', notes:'',
-    custom_fields:'{}', created_at: new Date().toISOString()
-  };
-  const res = await api('saveClient', {client: c});
-  if (res.ok) {
-    clients.unshift(res.data);
-    openPanel(res.data.id);
-    render();
-  }
+  const c={id:'c'+Date.now(),nom:'Nou projecte',empresa:'',email:'',tel:'',estat:'Potencial',responsable:RESPONSABLES[0],darrer_contacte:'',proper_contacte:'',notes:'',custom_fields:'{}',created_at:new Date().toISOString()};
+  const res=await api('saveClient',{client:c});
+  if(res.ok){clients.unshift(res.data);openPanel(res.data.id);render();}
 }
 
 async function deleteClient(id) {
-  if (!confirm('Eliminar aquest client i totes les seves dades?')) return;
-  const res = await api('deleteClient', {id});
-  if (res.ok) {
-    clients = clients.filter(c=>c.id!==id);
-    if (openClientId===id) closePanel();
-    render();
-  }
+  if(!confirm('Eliminar aquest projecte i totes les seves dades?'))return;
+  const res=await api('deleteClient',{id});
+  if(res.ok){clients=clients.filter(c=>c.id!==id);if(openClientId===id)closePanel();render();}
 }
 
 // ============================================================
-// COLUMNES PERSONALITZADES
+// EXPORTAR EXCEL
 // ============================================================
-function openColModal() {
-  renderColList();
-  document.getElementById('col-modal').classList.add('open');
-}
+function exportExcel() {
+  const cols=allCols();
+  const rows=filtered();
+  const headers=cols.map(c=>c.label);
+  const data=rows.map(r=>cols.map(c=>{
+    if(c.key.startsWith('cf_'))return getCustomVal(r,c.key);
+    if(c.key==='darrer_contacte'||c.key==='proper_contacte')return fmtDate(r[c.key]);
+    return r[c.key]||'';
+  }));
 
-function closeColModal() {
-  document.getElementById('col-modal').classList.remove('open');
-}
+  let csv='\uFEFF';
+  csv+=headers.join(';')+'\n';
+  data.forEach(row=>{
+    csv+=row.map(v=>'"'+String(v||'').replace(/"/g,'""')+'"').join(';')+'\n';
+  });
 
-function renderColList() {
-  const fixed = BASE_COLS.map(c=>`
-    <div class="col-item" style="background:#fafafa">
-      <span style="flex:1;color:#888;font-size:13px">${c.label}</span>
-      <span style="font-size:11px;color:#aaa">columna fixa</span>
-    </div>`).join('');
-
-  const custom = customFields.map((f,i)=>`
-    <div class="col-item" id="cf-${i}">
-      <input value="${esc(f.label)}" placeholder="Nom columna" onchange="customFields[${i}].label=this.value">
-      <select onchange="customFields[${i}].type=this.value">
-        ${['text','number','date','select'].map(t=>`<option${t===f.type?' selected':''}>${t}</option>`).join('')}
-      </select>
-      <input value="${esc(f.options||'')}" placeholder="Opcions (si select)" style="width:120px" onchange="customFields[${i}].options=this.value">
-      <button class="btn btn-sm" style="color:#c0392b" onclick="removeCustomCol(${i})">✕</button>
-    </div>`).join('');
-
-  document.getElementById('col-list').innerHTML = fixed + (custom || '<div style="color:#888;font-size:13px;padding:8px 0">Sense columnes personalitzades</div>') + (customFields.length?'':'');
-}
-
-function addCustomCol() {
-  const key = 'cf_' + Date.now();
-  customFields.push({key, label:'Nova columna', type:'text', options:''});
-  renderColList();
-}
-
-function removeCustomCol(i) {
-  customFields.splice(i,1);
-  renderColList();
-}
-
-async function saveColumns() {
-  const res = await api('saveCustomFields', {fields: customFields});
-  if (res.ok) {
-    closeColModal();
-    render();
-  }
-}
-
-// ============================================================
-// EXPORTAR CALENDARI (.ics)
-// ============================================================
-function exportCalendar() {
-  const events = clients
-    .filter(c => c.proper_contacte)
-    .map(c => {
-      const d = c.proper_contacte.replace(/-/g,'');
-      return [
-        'BEGIN:VEVENT',
-        `DTSTART;VALUE=DATE:${d}`,
-        `DTEND;VALUE=DATE:${d}`,
-        `SUMMARY:Contacte: ${c.nom} (${c.empresa||''})`,
-        `DESCRIPTION:Responsable: ${c.responsable||''}\\nEstat: ${c.estat||''}`,
-        `UID:crm-${c.id}@equip`,
-        'END:VEVENT'
-      ].join('\r\n');
-    });
-
-  const ics = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//CRM Equip//CA', ...events,'END:VCALENDAR'].join('\r\n');
-  const blob = new Blob([ics], {type:'text/calendar'});
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = 'contactes-crm.ics';
+  const blob=new Blob([csv],{type:'text/csv;charset=utf-8'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='projectes-crm.csv';
   a.click();
 }
 
 // ============================================================
-// EVENTS GLOBALS
+// EXPORTAR CALENDARI
 // ============================================================
-document.getElementById('search').addEventListener('input', render);
-document.getElementById('f-estat').addEventListener('change', render);
-document.getElementById('f-resp').addEventListener('change', render);
-document.getElementById('login-pass').addEventListener('keydown', e => { if(e.key==='Enter') doLogin(); });
-document.getElementById('col-modal').addEventListener('click', e => { if(e.target===document.getElementById('col-modal')) closeColModal(); });
+function exportCalendar() {
+  const events=clients.filter(c=>c.proper_contacte).map(c=>{
+    const d=String(c.proper_contacte).split('T')[0].replace(/-/g,'');
+    return['BEGIN:VEVENT','DTSTART;VALUE=DATE:'+d,'DTEND;VALUE=DATE:'+d,
+      'SUMMARY:Contacte: '+(c.nom||'')+' ('+(c.empresa||'')+')',
+      'DESCRIPTION:Responsable: '+(c.responsable||'')+'\\nEstat: '+(c.estat||''),
+      'UID:crm-'+c.id+'@equip','END:VEVENT'].join('\r\n');
+  });
+  const ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//CRM Equip//CA',...events,'END:VCALENDAR'].join('\r\n');
+  const blob=new Blob([ics],{type:'text/calendar'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='contactes-crm.ics';
+  a.click();
+}
 
 // ============================================================
-// ARRENCADA
+// EVENTS I ARRENCADA
 // ============================================================
-if (checkSession()) {
-  startApp();
-}
+document.getElementById('search').addEventListener('input',render);
+document.getElementById('f-estat').addEventListener('change',render);
+document.getElementById('f-resp').addEventListener('change',render);
+document.getElementById('login-pass').addEventListener('keydown',e=>{if(e.key==='Enter')doLogin();});
+document.getElementById('col-modal').addEventListener('click',e=>{if(e.target===document.getElementById('col-modal'))closeColModal();});
+document.getElementById('vis-modal').addEventListener('click',e=>{if(e.target===document.getElementById('vis-modal'))closeVisModal();});
+
+if(checkSession()){startApp();}
 </script>
 </body>
 </html>
-  
